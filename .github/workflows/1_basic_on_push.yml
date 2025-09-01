@@ -1,16 +1,9 @@
 # Nome do Workflow
 name: Exemplo Básico de Push
-
-# Gatilho (Trigger):
 on:
-  # A configuração 'on: push:' é a forma mais simples e abrangente de usar o gatilho de push.
-  # Sem filtros adicionais, este workflow será acionado sempre que um commit for enviado (`git push`)
-  # para QUALQUER branch do repositório.
-  # É um ótimo ponto de partida, mas em projetos reais, geralmente adicionamos filtros
-  # para controlar a execução, como veremos nos próximos exemplos.
   push:
-    paths:
-      - '**.md'           # Executa se qualquer arquivo com a extensão .md for alterado em qualquer lugar do repositório.
+    branches-ignore:
+      - main          # Ignora pushes para a branch 'main'
 
 # Jobs que o workflow executará
 jobs:
